@@ -67,4 +67,18 @@ from films
 inner join directors
 on films.director_id = director_id;
 
+-- Exercise 2
+select 
+directors.director,
+films.film_name
+from directors
+left join films
+on directors.id = films.director_id;
 
+-- Exercise 3
+select 
+directors.director,
+films.film_name
+from directors
+right join films
+on directors.id = films.director_id;
