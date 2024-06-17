@@ -98,7 +98,7 @@ alter table inventory
 	go
 
 update inventory set 
-	tmp_name = name,
+	tmp_name = name,  -- it's normal for the red lines to appear however the code should still run perfectly fine 
 	tmp_colour = colour;
 	go
 
@@ -118,7 +118,9 @@ alter table inventory
 	go
 
 -- Deleting specific records
-
+delete from inventory
+	where id = 1;
+	go
 
 select * from inventory
 	
