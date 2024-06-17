@@ -45,3 +45,4 @@ select * from patients where gender != 'F';
 
 select patient_first_name, patient_last_name, [weight] from patients where [weight] > 66.50
 
+select * from patients where height between 1.71 and 1.99
