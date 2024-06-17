@@ -56,3 +56,5 @@ update patients
 
 select * from patients where patient_id = 1
 
+select avg([weight]) [average weight of all patients] from patients;
+
