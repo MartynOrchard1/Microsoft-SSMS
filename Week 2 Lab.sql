@@ -127,8 +127,29 @@ delete from inventory
 	where category = 'Tables';
 	go
 
+-- Challenge Time!:
+
+-- Challenge 1 Add a new column named location to the inventory table to store the warehouse location of each item.
+alter table inventory
+	add location bit;
+	go
+
+-- Challenge 2 Modify the qoh (quantity on hand) column to a SMALLINT data type to save storage space.
+alter table inventory
+	alter column qoh smallint;
+	go	
+
+-- Challenge 3 Increase the rec_retail_price by $5.00 for all items with a unit_price less than $40.00.
+update inventory
+	set rec_retail_price = rec_retail_price + 5.00
+	where unit_price < 40.00
+	go
+
+-- Challenge 4 Delete all items acquired before '2024-03-01'.
 
 
+
+select * from inventory
 	
 
 
