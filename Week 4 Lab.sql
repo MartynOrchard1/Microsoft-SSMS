@@ -17,3 +17,12 @@ create table films (
     director_id INT,
     FOREIGN KEY (director_id) REFERENCES directors(id)
 );
+
+create table characters (
+	actor_id int,
+	film_id int,
+	character_name varchar(255) not null,
+	primary key (actor_id, film_id),
+	foreign key (actor_id) references actors(id),
+	foreign key (film_id) references films(id)
+);
