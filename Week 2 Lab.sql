@@ -124,7 +124,7 @@ delete from inventory
 
 -- Delete multiple records
 delete from inventory
-	where category = 'Tables';
+	where category = 'Tables'; -- is underlined in red because the column was added to the inventory table after the query is run.
 	go
 
 -- Challenge Time!:
@@ -146,7 +146,13 @@ update inventory
 	go
 
 -- Challenge 4 Delete all items acquired before '2024-03-01'.
-
+delete from inventory
+where acquired_date < '2024-03-01';
+	
+-- Challenge 5 Delete all items in the Tables category.
+delete from inventory
+	where category like '%Tables%';
+	go
 
 
 select * from inventory
