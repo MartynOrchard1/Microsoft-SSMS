@@ -58,3 +58,9 @@ select * from patients where patient_id = 1
 
 select avg([weight]) [average weight of all patients] from patients;
 
+select 
+	gender,
+	avg([weight]) [average weight of all patients]
+	from patients
+	group by gender
+	go
