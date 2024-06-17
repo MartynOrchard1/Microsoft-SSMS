@@ -29,12 +29,26 @@ VALUES
 insert into inventory (name, colour, qoh, instock)
 values 
 ('Red Chair', 'Red', 15, 1),
-('Red Table', 'red', 15, 1),
-('Blue Table', 'Blue', 15, 1),
-('Green Table', 'Green', 15, 1), 
+('Red Table', 'Red', 20, 1),
+('Blue Table', 'Blue', 25, 1),
+('Green Table', 'Green', 30, 1), 
 ('Yellow Sofa', 'Yellow', 5, 1),
 ('Purple Lamp', 'Purple', 7, 0),
 ('Orange Desk', 'Orange', 3, 1),
 ('Whiteboard', 'White', 10, 1),
 ('Black Chair', 'Black', 15, 0),
 ('Grey Table', 'Grey', 8, 1);
+
+-- Start of 3rd Lab
+
+-- Using the count aggregate function
+select count(unit_price) as NumberOfPrices
+from inventory;
+go
+
+-- Other aggregate functions
+
+
+
+
+--select * from inventory
