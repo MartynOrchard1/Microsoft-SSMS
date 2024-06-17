@@ -14,3 +14,18 @@ create table patient (
 	weight decimal(5,2),
 	hm_phone varchar(25)
 );
+
+exec sp_rename 'patient','patients'
+go
+
+sp_rename 'patients.hm_phone', 'home_phone'
+go
+
+alter table patients
+	alter column date_of_birth date;
+	go
+
+insert into patients 
+values
+()
+go
