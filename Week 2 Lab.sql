@@ -122,7 +122,13 @@ delete from inventory
 	where id = 1;
 	go
 
-select * from inventory
+-- Delete multiple records
+delete from inventory
+	where category = 'Tables';
+	go
+
+
+
 	
 
 
