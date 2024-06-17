@@ -56,9 +56,9 @@ go
 --	go
 
 ---- Combining numeric values with strings
---select 'the toal sum of unit_price is $' + cast(sum(unit_price) as varchar) as TotalPriceMessage
+--select 'the total sum of unit_price is $' + cast(sum(unit_price) as varchar) as TotalPriceMessage
 --	from inventory;
---	go
+--go
 
 -- Using Group By
 --select
@@ -87,6 +87,18 @@ select
 	group by colour
 	go
 
+-- Additional exercise 2
+SELECT 
+    colour,
+    'For Colour ' + colour + ', The total price is $' + 
+    CAST(ROUND(SUM(unit_price), 2) AS VARCHAR) + ', The Average price is $' + 
+    CAST(ROUND(AVG(unit_price), 2) AS VARCHAR) + ', and the highest price is $' + 
+    CAST(ROUND(MAX(unit_price), 2) AS VARCHAR) AS message
+FROM 
+    inventory
+GROUP BY 
+    colour;
+GO
 
 
 
