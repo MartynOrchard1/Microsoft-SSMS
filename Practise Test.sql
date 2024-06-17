@@ -11,7 +11,7 @@ create table patient (
 	gender char(2) not null,
 	date_of_birth smalldatetime not null,
 	height decimal(5,2),
-	weight decimal(5,2),
+	[weight] decimal(5,2),
 	hm_phone varchar(25)
 );
 
@@ -40,4 +40,8 @@ values
 go
 
 select * from patients where patient_last_name = 'Doe';
+
+select * from patients where gender != 'F';
+
+select patient_first_name, patient_last_name, [weight] from patients where [weight] > 66.50
 
