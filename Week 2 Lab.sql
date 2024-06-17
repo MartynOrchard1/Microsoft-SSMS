@@ -162,8 +162,8 @@ exec sp_rename 'inventory.inv_name', 'name1';
 exec sp_rename 'inventory', 'products';
 	go
 
---exec sp_rename 'products', 'inventory';
---	go
+exec sp_rename 'products', 'inventory';
+	go
 
 
 select * from inventory
