@@ -64,7 +64,9 @@ values
 ('Black Chair', 'Black', 15, 0),
 ('Grey Table', 'Grey', 8, 1);
 
--- update a specific record
+--Altering records:
+
+-- Update a specific record
 update inventory set
 	qoh = 8
 where id =1;
@@ -74,7 +76,28 @@ update inventory set
 	qoh = 8,
 	colour = 'Pink'
 	where id = 1;
-select * from inventory where id = 1
+
+-- Altering Tables:
+
+-- Adding New column(s)
+alter table inventory
+add category varchar(50);
+go
+-- Populate new column
+update inventory set category = case
+	when name LIKE '%Chair%' then 'chairs'
+	when name LIKE '%Table%' then 'Tables'
+	when name LIKE '%Sofa%' then 'Furniture'
+	when name LIKE '%Lamp%' then 'Lighting'
+	when name LIKE '%Desk%' then 'Desks'
+	else 'misc'
+	end;
+
+
+
+
+
+
 
 
 --select * from inventory where unit_price > 20.00 -- Pulls records where unit price is greater than 20
