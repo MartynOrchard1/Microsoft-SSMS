@@ -1,6 +1,11 @@
 use [master]
 go
 
+drop table if exists directors;
+drop table if exists actors;
+drop table if exists films;
+drop table if exists characters;
+
 -- Create Tables
 create table directors (
 	 id int primary key,
@@ -29,29 +34,37 @@ create table characters (
 );
 
 --Populate Tables
-INSERT INTO directors (id, director) VALUES 
+INSERT INTO directors (id, director) 
+VALUES 
 (1, 'Steven Spielberg'),
 (2, 'David Ayer'),
 (3, 'Clint Eastwood'),
 (4, 'Ben Affleck');
 
-INSERT INTO actors (id, actor_name) VALUES 
+INSERT INTO actors (id, actor_name)
+VALUES 
 (1, 'Roy Schneider'),
 (2, 'Clint Eastwood'),
 (3, 'Drew Barrymore');
 
-INSERT INTO films (id, film_name, director_id) VALUES 
+INSERT INTO films (id, film_name, director_id) 
+VALUES 
 (1, 'Jaws', 1),
 (2, 'E.T. the Extra-Terrestrial', 1),
 (3, 'Unforgiven', 3);
 
-INSERT INTO characters (actor_id, film_id, character_name) VALUES 
+INSERT INTO characters (actor_id, film_id, character_name) 
+VALUES 
 (1, 1, 'Brody'),
 (1, 2, 'Quint'),
 (3, 2, 'Gertie');
 
+-- Exercise 1
+select 
+	films.film_name,
+	directors.director
+from films
+inner join directors
+on films.director_id = director_id;
 
-drop table if exists directors;
-drop table if exists actors;
-drop table if exists films;
-drop table if exists characters;
+
