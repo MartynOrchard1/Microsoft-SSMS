@@ -25,6 +25,10 @@ alter table patients
 	alter column date_of_birth date;
 	go
 
+alter table patients
+	add primary_doctor_id int;
+	go
+
 insert into patients 
 values
 ()
