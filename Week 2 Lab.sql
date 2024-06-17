@@ -154,6 +154,17 @@ delete from inventory
 	where category like '%Tables%';
 	go
 
+-- Rename a column
+exec sp_rename 'inventory.inv_name', 'name1';
+	go
+
+-- Rename a table
+exec sp_rename 'inventory', 'products';
+	go
+
+--exec sp_rename 'products', 'inventory';
+--	go
+
 
 select * from inventory
 	
