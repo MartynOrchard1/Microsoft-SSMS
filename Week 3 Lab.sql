@@ -47,35 +47,35 @@ from inventory;
 go
 
 -- Other aggregate functions
---select
---	sum(unit_price) as TotalPrice,
---	avg(unit_price) as AveragePrice,
---	max(unit_price) as HighestPrice,
---	min(unit_price) as LowestPrice
---	from inventory;
---	go
+select
+	sum(unit_price) as TotalPrice,
+	avg(unit_price) as AveragePrice,
+	max(unit_price) as HighestPrice,
+	min(unit_price) as LowestPrice
+	from inventory;
+	go
 
 ---- Combining numeric values with strings
---select 'the total sum of unit_price is $' + cast(sum(unit_price) as varchar) as TotalPriceMessage
---	from inventory;
---go
+select 'the total sum of unit_price is $' + cast(sum(unit_price) as varchar) as TotalPriceMessage
+	from inventory;
+go
 
 -- Using Group By
---select
---	colour,
---	sum(unit_price) as TotalPrice
---	from inventory
---	group by colour;
---	go
+select
+	colour,
+	sum(unit_price) as TotalPrice
+	from inventory
+	group by colour;
+	go
 
 ---- Having and group by
---select
---	colour,
---	sum(unit_price) as TotalPrice
---	from inventory
---	group by colour
---	having sum(unit_price) > 30;
---	go
+select
+	colour,
+	sum(unit_price) as TotalPrice
+	from inventory
+	group by colour
+	having sum(unit_price) > 30;
+	go
 
 -- Additional exercise 1
 select 
@@ -100,6 +100,18 @@ GROUP BY
     colour;
 GO
 
+-- Additional Exercise 3
+SELECT 
+    colour,
+    'For Colour ' + colour + ', The total price is $' + 
+    CONVERT(VARCHAR, ROUND(SUM(unit_price), 2)) + ', The Average price is $' + 
+    CONVERT(VARCHAR, ROUND(AVG(unit_price), 2)) + ', and the highest price is $' + 
+    CONVERT(VARCHAR, ROUND(MAX(unit_price), 2)) AS message
+FROM 
+    inventory
+GROUP BY 
+    colour;
+GO
 
 
 --select * from inventory
