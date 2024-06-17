@@ -65,4 +65,12 @@ select
 	group by gender
 	go
 
+select 
+	gender,
+	avg([weight]) [average weight of all patients less than 78 kg's]
+	from patients 
+	group by gender 
+	having avg([weight]) < 78.00 
+	order by avg([weight]) desc;
+	go
 
