@@ -112,6 +112,14 @@ update inventory set
 	colours = colour;
 	go
 
+-- Drop Columns | THIS IS CHALLENGE 2 FROM 2ND LAB
+alter table inventory
+	drop column tmp_name, tmp_colour
+	go
+
+-- Deleting specific records
+
+
 select * from inventory
 	
 
