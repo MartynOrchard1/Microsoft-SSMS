@@ -68,8 +68,12 @@ values
 update inventory set
 	qoh = 8
 where id =1;
-go
 
+-- Update multiple records
+update inventory set 
+	qoh = 8,
+	colour = 'Pink'
+	where id = 1;
 select * from inventory where id = 1
 
 
