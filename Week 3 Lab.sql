@@ -47,6 +47,45 @@ from inventory;
 go
 
 -- Other aggregate functions
+--select
+--	sum(unit_price) as TotalPrice,
+--	avg(unit_price) as AveragePrice,
+--	max(unit_price) as HighestPrice,
+--	min(unit_price) as LowestPrice
+--	from inventory;
+--	go
+
+---- Combining numeric values with strings
+--select 'the toal sum of unit_price is $' + cast(sum(unit_price) as varchar) as TotalPriceMessage
+--	from inventory;
+--	go
+
+-- Using Group By
+--select
+--	colour,
+--	sum(unit_price) as TotalPrice
+--	from inventory
+--	group by colour;
+--	go
+
+---- Having and group by
+--select
+--	colour,
+--	sum(unit_price) as TotalPrice
+--	from inventory
+--	group by colour
+--	having sum(unit_price) > 30;
+--	go
+
+-- Additional exercise 1
+select 
+	colour,
+	sum(unit_price) as TotalPrice,
+	max(unit_price) as TotalPrice,
+	min(unit_price) as TotalPrice
+	from inventory
+	group by colour
+	go
 
 
 
