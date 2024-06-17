@@ -102,7 +102,7 @@ update inventory set
 	tmp_colour = colour;
 	go
 
--- Challenge time!
+-- Challenge Number 1
 alter table inventory
 	add inv_name varchar(50), colours varchar(50);
 	go
