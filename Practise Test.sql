@@ -64,3 +64,5 @@ select
 	from patients
 	group by gender
 	go
+
+
