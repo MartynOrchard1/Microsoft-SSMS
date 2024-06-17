@@ -63,22 +63,36 @@ VALUES
 select 
 	films.film_name,
 	directors.director
-from films
-inner join directors
-on films.director_id = director_id;
+	from films
+	inner join directors
+	on films.director_id = director_id;
 
 -- Exercise 2
 select 
-directors.director,
-films.film_name
-from directors
-left join films
-on directors.id = films.director_id;
+	directors.director,
+	films.film_name
+	from directors
+	left join films
+	on directors.id = films.director_id;
 
 -- Exercise 3
 select 
-directors.director,
-films.film_name
-from directors
-right join films
-on directors.id = films.director_id;
+	directors.director,
+	films.film_name
+	from directors
+	right join films
+	on directors.id = films.director_id;
+
+-- Exercise 4
+select 
+	films.film_name,
+	directors.director,
+	actors.actor_name,
+	characters.character_name
+	from characters
+	inner join films
+		on characters.film_id = films.id
+	inner join directors
+		on films.director_id = director_id
+	inner join actors
+		on characters.actor_id = actors.id;
