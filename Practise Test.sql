@@ -74,3 +74,8 @@ select
 	order by avg([weight]) desc;
 	go
 
+SELECT 
+    patient_first_name + ' ' + patient_last_name AS patients,
+    'Has a height of ' + CAST(height AS VARCHAR(10)) + ' cm''s' AS heights
+FROM 
+    patients;
