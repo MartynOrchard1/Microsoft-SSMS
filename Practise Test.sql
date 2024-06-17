@@ -48,3 +48,11 @@ select patient_first_name, patient_last_name, [weight] from patients where [weig
 select * from patients where height between 1.71 and 1.99;
 
 select * from patients where patient_first_name like '%e%';
+
+update patients 
+	set [weight] = 79.00	
+	where patient_id = 1
+	go
+
+select * from patients where patient_id = 1
+
